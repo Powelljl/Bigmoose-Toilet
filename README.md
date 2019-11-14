@@ -1,6 +1,10 @@
 # Bigmoose Button
 
 Bigmoose Button is run from two scripts that run the button in the toilet in Bigmoose Cardiff, The button triggers a sound effect and there is also background music running on a loop.
+#### Demo
+[![Demo Bigmoose Button](https://media.giphy.com/media/WT3dnzmtPDhz3PwqiX/giphy.gif)](https://media.giphy.com/media/WT3dnzmtPDhz3PwqiX/source.mp4)
+
+
 ### Tech
 
 Bigmoose Button uses a number of open source projects to work properly:
