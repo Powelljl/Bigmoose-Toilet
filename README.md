@@ -19,13 +19,7 @@ Bigmoose Button uses a number of open source projects to work properly:
 
 ### Installation
 
-Coming soon!
-
-```sh
-$ .
-$ .
-$ .
-```
+Simply run the `install.sh` script and it'll take care of everything for you (make sure it's executable with `chmod +x install.sh`!), including making two systemd service files (`big-moose-button` and `big-moose-forest`), enabling them at startup, creating a python venv and installing the required packages to the venv
 
 ----
 Licence
@@ -33,7 +27,3 @@ MIT
 
 
 **Free Software, Hell Yeah!**
-
-
-sudo pip3 install adafruit-blinka
-pip3 install --upgrade adafruit_blinka
