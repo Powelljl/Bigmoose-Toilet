@@ -1,0 +1,41 @@
+#!/bin/sh
+# Create the service unit files
+echo "[Unit]
+Description=Big moose python script
+After=network.target
+
+[Service]
+User=$(whoami)
+WorkingDirectory=$PWD
+ExecStart=$PWD/button-start.sh
+
+[Install]
+WantedBy=multi-user.target" > big-moose-button.service
+echo "[Unit]
+Description=Big moose forest sounds
+After=network.target
+
+[Service]
+User=$(whoami)
+WorkingDirectory=$PWD
+ExecStart=$PWD/forest-start.sh
+
+[Install]
+WantedBy=multi-user.target" > big-moose-forest.service
+# Move the service files to the systemd folder
+sudo mv big-moose-button.service /etc/systemd/system/
+sudo mv big-moose-forest.service /etc/systemd/system/
+# Set them to start at startup
+sudo systemctl enable big-moose-button
+sudo systemctl enable big-moose-forest
+# Start the services
+sudo systemctl start big-moose-button
+sudo systemctl start big-moose-forest
+# Create the python venv and install required packages
+if [ ! -d directory ]; then
+  python3 -m venv env
+fi
+source env/bin/activate
+python3 -m pip install -r requirements.txt
+deactivate
+echo "Done! The service names are big-moose-button and big-moose-forest"
