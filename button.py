@@ -4,7 +4,7 @@ from pygame import mixer
 
 mixer.init()
 GPIO.setmode(GPIO.BCM)
-INPUT_PIN = 24
+INPUT_PIN = 23
 GPIO.setwarnings(False)
 GPIO.setup(INPUT_PIN, GPIO.IN , pull_up_down=GPIO.PUD_DOWN)
 isFirstPress = True
