@@ -32,7 +32,7 @@ sudo systemctl enable big-moose-forest
 sudo systemctl start big-moose-button
 sudo systemctl start big-moose-forest
 # Create the python venv and install required packages
-sudo apt install -y python3-pip python3-venv
+sudo apt install -y python3-pip python3-venv source
 if [ ! -d directory ]; then
   python3 -m venv env
 fi
