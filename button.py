@@ -26,4 +26,4 @@ def handle(pin):
 GPIO.add_event_detect(INPUT_PIN, GPIO.RISING, callback=handle)
 
 while True:
-    time.sleep(8**64)
+    time.sleep(1e6)
