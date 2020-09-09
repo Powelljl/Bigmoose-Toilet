@@ -21,6 +21,7 @@ def handle(pin):
         isFirstPress = False
         time.sleep(3)
         isFirstPress = True
+        return
     else:
         return
 
