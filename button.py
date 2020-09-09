@@ -1,31 +1,31 @@
 import RPi.GPIO as GPIO
 import time
+import threading
 from pygame import mixer
 
 mixer.init()
 GPIO.setmode(GPIO.BCM)
-INPUT_PIN = 23
+INPUT = 24
 GPIO.setwarnings(False)
-GPIO.setup(INPUT_PIN, GPIO.IN , pull_up_down=GPIO.PUD_DOWN)
+GPIO.setup([INPUT], GPIO.IN , pull_up_down=GPIO.PUD_DOWN)
 isFirstPress = True
-
-def music():
-    mixer.music.load('./audio/Moose-Sound.mp3')
+def music_thread():
+    mixer.music.load('./audio/Moose-Sound.wav')
     mixer.music.play()
 
 def handle(pin):
     global isFirstPress
     if isFirstPress == True:
+        t = threading.Thread(target=music_thread)
+        t.daemon = True
+        t.start()
         print("starting playback")
-        music()
         isFirstPress = False
         time.sleep(3)
-        isFirstPress = True
-        return
     else:
-        return
+        isFirstPress = True
 
-GPIO.add_event_detect(INPUT_PIN, GPIO.RISING, callback=handle)
+GPIO.add_event_detect(INPUT, GPIO.RISING, handle)
 
 while True:
     time.sleep(1e6)
