@@ -19,7 +19,8 @@ def handle(pin):
         print("starting playback")
         music()
         isFirstPress = False
-        time.sleep(3)  
+        time.sleep(3)
+        isFirstPress = True
     else:
         return
 
