@@ -10,7 +10,7 @@ GPIO.setwarnings(False)
 GPIO.setup([INPUT], GPIO.IN , pull_up_down=GPIO.PUD_DOWN)
 isFirstPress = 1
 def music_thread():
-    mixer.music.load('/home/pi/Bigmoose/Bigmoose-Toilet/audio/Moose-Sound.mp3')
+    mixer.music.load('./audio/Moose-Sound.wav')
     mixer.music.play ()
 
 def handle(pin):
