@@ -8,22 +8,22 @@ GPIO.setmode(GPIO.BCM)
 INPUT = 24
 GPIO.setwarnings(False)
 GPIO.setup([INPUT], GPIO.IN , pull_up_down=GPIO.PUD_DOWN)
-isFirstPress = 1
+isFirstPress = True
 def music_thread():
     mixer.music.load('./audio/Moose-Sound.wav')
-    mixer.music.play ()
+    mixer.music.play()
 
 def handle(pin):
     global isFirstPress
-    if isFirstPress == 1:
-      t = threading.Thread(target=music_thread)
-      t.daemon = True
-      t.start()
-      print("starting playback")
-      isFirstPress = 0
-      time.sleep(3)  
+    if isFirstPress == True:
+        t = threading.Thread(target=music_thread)
+        t.daemon = True
+        t.start()
+        print("starting playback")
+        isFirstPress = False
+        time.sleep(3)
     else:
-        isFirstPress = 1
+        isFirstPress = True
 
 GPIO.add_event_detect(INPUT, GPIO.RISING, handle)
 

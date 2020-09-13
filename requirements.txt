@@ -1,0 +1,8 @@
+Adafruit-Blinka>=5.3.2
+Adafruit-PlatformDetect>=2.15.0
+Adafruit-PureIO>=1.1.5
+pkg-resources>=0.0.0
+pyftdi>=0.51.2
+pyserial>=3.4
+pyusb>=1.0.2
+sysv-ipc>=1.0.1
